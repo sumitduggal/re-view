@@ -1,5 +1,7 @@
 import { ReactNode } from "react"
 import { Head } from "blitz"
+import { VStack } from "@chakra-ui/layout"
+import { NavBar } from "../components/LayoutComponents/NavBar"
 
 type LayoutProps = {
   title?: string
@@ -13,8 +15,10 @@ const Layout = ({ title, children }: LayoutProps) => {
         <title>{title || "re-view"}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      {children}
+      <VStack>
+        <NavBar />
+        {children}
+      </VStack>
     </>
   )
 }
